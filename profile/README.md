@@ -12,7 +12,8 @@ Este proyecto es una aplicación que permite gestionar los usuarios, reservas, f
   <li>Java</li>
   <li>Spring Boot</li>
   <li>Spring Cloud</li>
-  <li>Spring Cloud Config</li>
+  <li>Spring Cloud Gateway</li>
+  <li>Microservicios</li>
   <li>Eureka</li>
   <li>Actuator</li>
   <li>Resilience4j</li>
@@ -26,26 +27,46 @@ Este proyecto es una aplicación que permite gestionar los usuarios, reservas, f
   <li>Envío de emails</li>
   <li>Kafka</li>
   <li>Carga de imagenes</li>
-  <li>Microservicios</li>
-  <li>Spring Cloud Gateway</li>
-  <li>AWS S3</li>
-  <li>AWS MKS</li>
-  <li>AWS RDS</li>
-  <li>AWS EC2</li>
+  <li>AWS S3 (Almacenamiento de imagenes)</li>
+  <li>AWS MKS (Kafka)</li>
+  <li>AWS RDS (Bases de datos)</li>
+  <li>AWS EC2 (Servidores)</li>
   <li>AWS ASC</li>
-  <li>AWS X-Ray</li>
+  <li>AWS X-Ray (Monitorización)</li>
   <li>AWS Lambda</li>
   <li>Terraform</li>
   <li>Testing (JUnit, Mockito)</li>
   <li>Coverage (Jacoco)</li>
 </ul>
 
-## Levantar entorno de desarrollo
+## Levantar en local con Docker
+
+Requisitos:
+
+- Git
+- Docker
+- Credenciales de AWS
+- *Recomendado por lo menos 16gb de ram*
+
+#### 1. Clonar proyecto
 
 ```bash
 git clone https://github.com/spring-final-project/launcher.git
-git submodule update --init --recursive --remote
-
 cd launcher
+```
+
+#### 2. Asignar variables de entorno
+
+Renombrar el archivo `.env.template` a `.env` y completar las variables de entorno.
+
+#### 3. Clonar los microservicios
+
+```bash
+git submodule update --init --recursive --remote
+```
+
+#### 4. Levantar sistema completo
+
+```bash
 docker-compose up --build
 ```
