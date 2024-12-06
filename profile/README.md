@@ -111,6 +111,12 @@ terraform destroy
 > ![NOTE]
 > Lo único que no logra destruirse correctamente es el "log group" de CloudWatch de la lambda de emails. Para eliminarla deberá hacerse manualmente desde la consola de AWS o el CLI.
 
+## Uso
+
+Para empezar a hacer consultas e interactuar con la aplicación se deberá crear un usuario mediante el endpont `POST /api/users`. Para probar la apliación entera deberá crearse un usuario "OWNER" y un usuario simple. El usuario "OWNER" es el que puede crear habitaciones, el usuario simple es el que puede hacer reservas de estas habitaciones.
+
+Una vez creados los usuarios se deberán autenticar mediante el endpoint `POST /api/auth/login` y el token devuelto en los Headers es el que se deberá usar para las demás requests.
+
 ## Documentación
 
 Se puede acceder a la documentación de cada microservicio mediante swagger:
@@ -120,6 +126,12 @@ Se puede acceder a la documentación de cada microservicio mediante swagger:
 - rooms-ms: http://localhost:8080/api/rooms/swagger-ui/index.html
 - asks-ms: http://localhost:8080/api/asks/swagger-ui/index.html
 - bookings-ms: http://localhost:8080/api/bookings/swagger-ui/index.html
+
+### Postman
+
+También se publicó la colección de requests en Postman para poder importar facilmente:
+
+https://documenter.getpostman.com/view/17531746/2sAYBbd995
 
 ## Discovery (Eureka)
 
