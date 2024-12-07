@@ -97,7 +97,7 @@ Crear el archivo `terraform.tfvars` basado en `template.tfvars` en la raíz del 
 terraform apply
 ```
 
-> ![WARNING]
+> [!WARNING]
 > Tener en cuenta que el despliegue en AWS puede llegar a demorar cerca de 30 minutos la primera vez, lo que más demora es la creación del cluster de MSK.
 
 ---
@@ -108,7 +108,7 @@ terraform apply
 terraform destroy
 ```
 
-> ![NOTE]
+> [!NOTE]
 > Lo único que no logra destruirse correctamente es el "log group" de CloudWatch de la lambda de emails. Para eliminarla deberá hacerse manualmente desde la consola de AWS o el CLI.
 
 ## Uso
